@@ -1,4 +1,4 @@
-from python_league.base_challenge import BaseChallenge, BaseTest, BaseWeights
+from PyLeague.base_challenge import BaseChallenge, BaseTest, BaseWeights
 
 
 class FrameCountWeights(BaseWeights):
