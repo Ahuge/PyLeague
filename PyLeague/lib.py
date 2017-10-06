@@ -30,9 +30,9 @@ def runner(user_function, test_suite, count=1000):
     }
     recorded_results = False
     for iteration in range(count):
-        for expected_result, args in test_suite:
+        for args, expected_result in test_suite:
             length, result = timer(
-                user_function, args
+                user_function, *args
             )
             total_time += length
 
@@ -46,7 +46,8 @@ def runner(user_function, test_suite, count=1000):
                         (expected_result, result)
                     )
         recorded_results = True
-    return total_time / count, test_results
+    print("total_time is %s:" % total_time)
+    return total_time / float(count), test_results
 
 
 def _size(user_function):

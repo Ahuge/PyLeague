@@ -21,7 +21,7 @@ class BaseWeights(object):
                         expected_result, result
                     )
                 )
-                points = min([points, points-1])
+                points = max([points, points-1])
             else:
                 log.error(
                     "In expected: \"%s\", got \"%s\"..." % (
@@ -52,7 +52,7 @@ class BaseWeights(object):
         elif key == self.SIZE_KEY:
             return self.calculate_size(self.size)
         elif key == self.TIME_KEY:
-            return self.calculate_size(self.time)
+            return self.calculate_time(self.time)
         else:
             log.warning("Unknown key: %s" % key)
 
