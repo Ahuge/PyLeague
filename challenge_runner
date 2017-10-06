@@ -1,0 +1,31 @@
+#!/tools/bin/python2.7
+import argparse
+import sys
+
+from PyLeague.lib import build_testing
+
+
+def parse():
+    parser = argparse.ArgumentParser(
+        description="This is the test runner for the DD Python League"
+    )
+    parser.add_argument(
+        "-c", "--challenge", help="Challenge name to run against."
+    )
+    parser.add_argument(
+        "-p", "--path", help="Path to your module that we are going to run."
+    )
+
+    return parser.parse_args()
+
+
+def main(args):
+    build_testing(
+        args.challenge,
+        args.path
+    )
+
+
+if __name__ == "__main__":
+    args = parse()
+    main(args)
