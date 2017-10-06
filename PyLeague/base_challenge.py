@@ -39,7 +39,7 @@ class BaseWeights(object):
         return points
 
     def calculate_size(self, size):
-        points = len(size)
+        points = size
         return points
 
     def calculate_time(self, time):
